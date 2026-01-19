@@ -112,10 +112,10 @@ const sendSMSNotification = async () => {
 };
 
 console.log('SMS Request:', requestData);
-    console.log('Endpoint URL:', 'http://localhost:8000/api/v1/sms/send-attendance-sms');
+    console.log('Endpoint URL:', 'https://attendance-system-production-5149.up.railway.app/api/v1/sms/send-attendance-sms');
 
     // 4. Send the request
-    const response = await fetch('http://localhost:8000/api/v1/sms/send-attendance-sms', {
+    const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/sms/send-attendance-sms', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -219,7 +219,7 @@ const sendWhatsAppNotification = async () => {
         
         console.log(`📱 Sending WhatsApp to ${student.parent_mobile} for ${student.name}`);
         
-        const response = await fetch('http://localhost:8000/api/v1/whatsapp/send-attendance-real', {
+        const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/whatsapp/send-attendance-real', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -300,7 +300,7 @@ const sendWhatsAppNotification = async () => {
       setLoadingAllStudents(true);
       const token = localStorage.getItem('token');
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/students?skip=0&limit=1000', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/students?skip=0&limit=1000', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -342,7 +342,7 @@ const sendWhatsAppNotification = async () => {
       setLoadingTeachers(true);
       const token = localStorage.getItem('token');
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/all/teachers/?skip=0&limit=10000', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/all/teachers/?skip=0&limit=10000', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -375,7 +375,7 @@ const sendWhatsAppNotification = async () => {
   const testAttendanceAPI = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/v1/attendance/test', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/attendance/test', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -407,7 +407,7 @@ const sendWhatsAppNotification = async () => {
       }
 
       // Build URL with teacher_id parameter
-      let url = `http://localhost:8000/api/v1/attendance/teacher/courses?teacher_id=${teacherId}`;
+      let url = `https://attendance-system-production-5149.up.railway.app/api/v1/attendance/teacher/courses?teacher_id=${teacherId}`;
 
       console.log('Fetching courses from URL:', url);
 
@@ -539,7 +539,7 @@ const sendWhatsAppNotification = async () => {
       }
 
       // Build URL with parameters
-      let url = `http://localhost:8000/api/v1/attendance/students-list?course=${encodeURIComponent(courseId)}&teacher_id=${teacherId}`;
+      let url = `https://attendance-system-production-5149.up.railway.app/api/v1/attendance/students-list?course=${encodeURIComponent(courseId)}&teacher_id=${teacherId}`;
 
       console.log('Fetching students from URL:', url);
 
@@ -616,7 +616,7 @@ const sendWhatsAppNotification = async () => {
         return;
       }
 
-      let url = `http://localhost:8000/api/v1/attendance/today?teacher_id=${teacherId}`;
+      let url = `https://attendance-system-production-5149.up.railway.app/api/v1/attendance/today?teacher_id=${teacherId}`;
 
       console.log('Fetching today attendance from URL:', url);
 
@@ -723,7 +723,7 @@ const markAttendance = async () => {
     console.log('Teacher ID:', teacherId);
 
     // Build URL with teacher_id as query parameter
-    const url = `http://localhost:8000/api/v1/attendance/mark?teacher_id=${teacherId}`;
+    const url = `https://attendance-system-production-5149.up.railway.app/api/v1/attendance/mark?teacher_id=${teacherId}`;
 
     const response = await fetch(url, {
       method: 'POST',
