@@ -24,7 +24,7 @@ const TeacherDashboard = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token') || 'demo-token';
-      const url = `http://localhost:8000/api/v1/attendance/today?teacher_id=${teacherId}&course_code=${courseCode}`;
+      const url = `https://attendance-system-production-5149.up.railway.app/api/v1/attendance/today?teacher_id=${teacherId}&course_code=${courseCode}`;
       
       console.log('Fetching attendance from:', url);
       
