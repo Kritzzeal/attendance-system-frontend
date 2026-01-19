@@ -1,26 +1,32 @@
-# Dockerfile
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package*.json ./
 
-# Install dependencies - using npm install instead of npm ci
+# Install dependencies
 RUN npm install --legacy-peer-deps
 
-# Copy all files
+# Copy source code
 COPY . .
 
-# Build the React app for production
+# Build the app
 RUN npm run build
 
-# Install serve to run the production build
+# Production stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install serve to run the build
 RUN npm install -g serve
+
+# Copy build from builder stage
+COPY --from=builder /app/build ./build
 
 # Expose port
 EXPOSE 3000
 
-# Command to run the app
+# Start the app
 CMD ["serve", "-s", "build", "-l", "3000"]
