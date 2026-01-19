@@ -1,0 +1,640 @@
+/* TeacherManagement.css */
+
+/* Base styles */
+.teacher-management {
+  padding: 30px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-left h1 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+.header-left p {
+  color: #666;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-back, .btn-clear-filters {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #3498db;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #2980b9;
+}
+
+.btn-back {
+  background: #95a5a6;
+  color: white;
+}
+
+.btn-back:hover {
+  background: #7f8c8d;
+}
+
+.btn-clear-filters {
+  background: #e74c3c;
+  color: white;
+  width: 100%;
+}
+
+.btn-clear-filters:hover {
+  background: #c0392b;
+}
+
+/* Error Message */
+.error-message {
+  padding: 15px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ffcdd2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message button {
+  padding: 5px 15px;
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Filters */
+.filters-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.filter-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.filter-item input,
+.filter-item select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  transition: border-color 0.3s;
+}
+
+.filter-item input:focus,
+.filter-item select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Table Container */
+.table-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.table-actions {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.teachers-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.teachers-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #eee;
+  cursor: pointer;
+  user-select: none;
+}
+
+.teachers-table th.sortable:hover {
+  background: #e9ecef;
+}
+
+.teachers-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.teacher-row:hover {
+  background: #f8f9fa !important;
+}
+
+/* Teacher Row Styles */
+.teacher-id, .teacher-name, .primary-text {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.secondary-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.email-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* Badges */
+.department-badge {
+  padding: 5px 10px;
+  background: #e8f4fd;
+  color: #3498db;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-badge.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Status Container */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-toggle-btn {
+  padding: 3px 8px;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.3s;
+}
+
+.status-toggle-btn.deactivate {
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.status-toggle-btn.deactivate:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.status-toggle-btn.activate {
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.status-toggle-btn.activate:hover {
+  background: #2ecc71;
+  color: white;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit, .btn-delete, .btn-view {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s;
+}
+
+.btn-edit {
+  background: #e8f4fd;
+  color: #3498db;
+}
+
+.btn-edit:hover {
+  background: #3498db;
+  color: white;
+}
+
+.btn-delete {
+  background: #ffebee;
+  color: #e74c3c;
+}
+
+.btn-delete:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-view {
+  background: #f0f4f8;
+  color: #7f8c8d;
+}
+
+.btn-view:hover {
+  background: #7f8c8d;
+  color: white;
+}
+
+/* Empty State */
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: #95a5a6;
+}
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pagination */
+.pagination-container {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  background: white;
+  color: #3498db;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  min-width: 40px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination-ellipsis {
+  padding: 8px;
+  color: #666;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 600px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #95a5a6;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  color: #7f8c8d;
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+/* Teacher Details Grid */
+.teacher-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.detail-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item label {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.detail-item span {
+  display: block;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* API Info */
+.api-info {
+  margin-top: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #666;
+  border-left: 4px solid #3498db;
+}
+
+.api-info > div {
+  margin-bottom: 5px;
+}
+
+.api-info span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.api-info code {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pagination-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+}
