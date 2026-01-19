@@ -4,7 +4,7 @@ import './TeacherManagement.css';
 
 // API Service - Include this at the top of your component file
 const createApiService = () => {
-  const baseURL = 'http://localhost:8000/api/v1';
+  const baseURL = 'https://attendance-system-production-5149.up.railway.app/api/v1';
   
   const request = async (endpoint, options = {}) => {
     const token = localStorage.getItem('token');
@@ -317,7 +317,7 @@ const TeacherManagement = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/admin/upload/teacher-courses', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/upload/teacher-courses', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -350,7 +350,7 @@ const TeacherManagement = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/admin/upload/teachers', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/upload/teachers', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
