@@ -1,11 +1,11 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install with legacy peer deps (NOT npm ci)
 RUN npm install --legacy-peer-deps
 
 # Copy source code
@@ -14,16 +14,8 @@ COPY . .
 # Build the app
 RUN npm run build
 
-# Production stage
-FROM node:18-alpine
-
-WORKDIR /app
-
-# Install serve to run the build
+# Install serve
 RUN npm install -g serve
-
-# Copy build from builder stage
-COPY --from=builder /app/build ./build
 
 # Expose port
 EXPOSE 3000
