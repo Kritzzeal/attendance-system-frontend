@@ -21,7 +21,7 @@ const StudentList = () => {
       // Calculate skip value for pagination
       const skip = (page - 1) * itemsPerPage;
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/students?skip=${skip}&limit=${itemsPerPage}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/students?skip=${skip}&limit=${itemsPerPage}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
