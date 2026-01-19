@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1',
+  baseURL: process.env.REACT_APP_API_URL || 'https://attendance-system-production-5149.up.railway.app/api/v1',
   headers: {
     'Content-Type': 'application/json',
   },
