@@ -41,7 +41,7 @@ const handleImportCourses = async () => {
     formData.append('file', importFile);
     
     // Add year and semester parameters if needed
-    const url = 'http://localhost:8000/api/v1/admin/upload/courses';
+    const url = 'https://attendance-system-production-5149.up.railway.app/api/v1/admin/upload/courses';
     
     console.log('Uploading file:', importFile.name);
     
@@ -95,7 +95,7 @@ const handleImportCourses = async () => {
       setLoading(true);
       const token = localStorage.getItem('token');
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/courses', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/courses', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -142,7 +142,7 @@ const handleImportCourses = async () => {
       
       console.log('Adding course:', newCourse);
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/courses', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/courses', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -214,7 +214,7 @@ const handleImportCourses = async () => {
 
       console.log('Updating course:', selectedCourse.code, 'with data:', updateData);
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/courses/${selectedCourse.code}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/courses/${selectedCourse.code}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -258,7 +258,7 @@ const handleImportCourses = async () => {
       
       console.log('Deleting course:', courseCode);
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/courses/${courseCode}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/courses/${courseCode}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
