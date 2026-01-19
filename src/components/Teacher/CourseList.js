@@ -12,7 +12,7 @@ const CourseList = () => {
       setLoading(true);
       const token = localStorage.getItem('token');
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/courses', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/courses', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
