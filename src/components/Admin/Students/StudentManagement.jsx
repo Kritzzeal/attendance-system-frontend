@@ -43,7 +43,7 @@ const StudentManagement = () => {
       // Calculate skip value for pagination
       const skip = (page - 1) * itemsPerPage;
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/students?skip=${skip}&limit=${itemsPerPage}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/students?skip=${skip}&limit=${itemsPerPage}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -113,7 +113,7 @@ const StudentManagement = () => {
       
       console.log('Adding student:', newStudent);
       
-      const response = await fetch('http://localhost:8000/api/v1/admin/students', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/admin/students', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -181,7 +181,7 @@ const StudentManagement = () => {
 
       console.log('Updating student:', selectedStudent.student_id, 'with data:', updateData);
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/students/${selectedStudent.student_id}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/students/${selectedStudent.student_id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -221,7 +221,7 @@ const StudentManagement = () => {
       
       console.log('Fetching student details:', studentId);
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/students/${studentId}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/students/${studentId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -262,7 +262,7 @@ const StudentManagement = () => {
       
       console.log('Deleting student:', studentId);
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/students/${studentId}`, {
+      const response = await fetch(`https://attendance-system-production-5149.up.railway.app/api/v1/admin/students/${studentId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -333,7 +333,7 @@ const StudentManagement = () => {
       const formData = new FormData();
       formData.append('file', importFile);
       
-      const url = 'http://localhost:8000/api/v1/admin/upload/students';
+      const url = 'https://attendance-system-production-5149.up.railway.app/api/v1/admin/upload/students';
       
       console.log('Uploading student file:', importFile.name);
       
