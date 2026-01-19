@@ -189,7 +189,7 @@ const Login = () => {
       console.log('Attempting login for:', credentials.email);
       
       // 1. Login to get the token
-      const response = await fetch('http://localhost:8000/api/v1/auth/login', {
+      const response = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -221,7 +221,7 @@ const Login = () => {
       
       // 2. Get user profile to determine role
       console.log('Getting user profile...');
-      const profileResponse = await fetch('http://localhost:8000/api/v1/auth/profile', {
+      const profileResponse = await fetch('https://attendance-system-production-5149.up.railway.app/api/v1/auth/profile', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
