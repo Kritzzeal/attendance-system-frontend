@@ -19,7 +19,7 @@ import StudentList from './components/Teacher/StudentList';
 import TeacherDashboard from './components/Teacher/TeacherDashboard';
 // API Service
 const createApiService = () => {
-  const baseURL = 'http://localhost:8000/api/v1';
+  const baseURL = 'https://attendance-system-production-5149.up.railway.app/api/v1';
   
   const request = async (endpoint, options = {}) => {
     const token = localStorage.getItem('token');
